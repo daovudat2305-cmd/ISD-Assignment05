@@ -85,13 +85,10 @@ def find_flowers_dir() -> Path:
     ]
     
     if os.path.exists("/kaggle/input"):
-        for dataset_dir in Path('/kaggle/input').iterdir():
-            if dataset_dir.is_dir():
-                candidates.extend([
-                    dataset_dir / "flowers" / "flowers_recognition" / "flowers",
-                    dataset_dir / "flowers" / "flowers",
-                    dataset_dir / "flowers",
-                ])
+        # Tìm kiếm đệ quy thư mục 'rose' trên toàn bộ Kaggle Input
+        for p in Path('/kaggle/input').rglob('rose'):
+            if p.is_dir():
+                return p.parent
                 
     for p in candidates:
         if p.exists() and (p / "rose").exists():
@@ -162,12 +159,10 @@ def find_fruits_vegetable_dir() -> Optional[Path]:
     ]
     
     if os.path.exists("/kaggle/input"):
-        for dataset_dir in Path('/kaggle/input').iterdir():
-            if dataset_dir.is_dir():
-                candidates.extend([
-                    dataset_dir / "fruits_vegetable",
-                    dataset_dir / "cifar10" / "fruits_vegetable",
-                ])
+        # Tìm kiếm đệ quy thư mục train của fruits_vegetable
+        for p in Path('/kaggle/input').rglob('train'):
+            if p.is_dir() and (p.parent / "validation").exists():
+                return p.parent
                 
     for p in candidates:
         if p.exists() and (p / "train").exists():
@@ -237,12 +232,10 @@ def find_diabetes_file() -> Path:
     ]
     
     if os.path.exists("/kaggle/input"):
-        for dataset_dir in Path('/kaggle/input').iterdir():
-            if dataset_dir.is_dir():
-                candidates.extend([
-                    dataset_dir / "diabetes" / "diabetes_prediction_dataset.csv",
-                    dataset_dir / "diabetes_prediction_dataset.csv",
-                ])
+        # Tìm kiếm đệ quy file csv
+        for p in Path('/kaggle/input').rglob('diabetes_prediction_dataset.csv'):
+            if p.is_file():
+                return p
                 
     for p in candidates:
         if p.exists():
