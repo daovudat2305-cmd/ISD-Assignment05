@@ -1,7 +1,9 @@
 # ISD — Assignment 05: Convolutional Neural Networks (CNN)
 
-> **Môn học:** Phát triển các Hệ thống Thông minh (Intelligent Systems Development)  
-> **Chủ đề:** Mạng nơ-ron tích chập (CNN) — Lý thuyết toàn diện, Hiện thực kiến trúc, Huấn luyện đa tập dữ liệu và Đánh giá XAI (Explainable AI).
+> **Học phần:** Phát triển các Hệ thống Thông minh (Intelligent Systems Development)  
+> **Chủ đề:** Mạng nơ-ron tích chập (CNN) — Lý thuyết toàn diện, Hiện thực kiến trúc, Huấn luyện đa tập dữ liệu và Đánh giá XAI (Explainable AI).  
+> 
+> 🏆 **BÁO CÁO TỔNG HỢP TOÀN DIỆN 5 PHẦN (FULL REPORT):** 👉 [`Bao_Cao_Tong_Hop_Assignment05_CNN.md`](Bao_Cao_Tong_Hop_Assignment05_CNN.md)
 
 ---
 
